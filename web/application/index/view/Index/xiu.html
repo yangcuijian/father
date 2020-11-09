@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<center>
+    <form action="{:url('Index/xiugai1')}?id={$ree.id}" method="post">
+        姓名:<input type="text" name="name" value="{$ree.name}"><br><br>
+        年龄:<input type="text" name="age" value="{$ree.age}"><br><br>
+        {//if $ree.sex==0}
+        性别:男<input type="radio" value="0" name="sex" checked>
+        {///else}
+        女<input type="radio" value="1" name="sex" checked>
+        <img src="/upload/{$ree.pic}" style="width: 40px"><br>
+        头像：<input type="file" name="pic" >
+        <input type="hidden" value="{$ree.pic}" name="image">
+
+
+        <input type="submit" value="提交">
+    </form>
+</center>
+</body>
+</html>

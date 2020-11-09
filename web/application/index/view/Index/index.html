@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>123</title>
+        paginate(5,false,[ 'type'=> 'page\Page','var_page'=>'page']);
+    </head>
+<body>
+
+<center>
+    <h3>学生信息管理</h3>
+    <a href="{:url('Index/index')}" style="text-decoration:none;" >查看</a>||<a href="{:url('index/add')}" style="text-decoration:none;">添加 </a>
+    <hr>
+    <table border="1" width="400px" style="text-align: center;" cellpadding="1">
+        <tr>
+            <td>id</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>头像</td>
+            <td>操作</td>
+        </tr>
+        {volist name="info" id="v"}
+            <tr>
+                <td>{$v.id}</td>
+                <td>{$v.name}</td>
+                <td>{$v.age}</td>
+                <td>{$v.sex==0?"男":"女"}</td>
+                <td><img src="/uploads/{$v.pic}" width="40px" height="40px" style="border-radius:100%"  ></td>
+                <td>
+                    <a href="{:url('index/xiugai',['id'=>$v.id ])}" style="text-decoration:none;">修改</a>
+                    <a href="{:url('Index/shanchu',['id'=>$v.id ])}" style="text-decoration:none;">删除</a>
+                </td>
+            </tr>
+        {/volist}
+    </table>
+
+        <a href="{：url('index/fenye')}?page=1">上一页</a> ||<a href="{:url('index/fenye')}?page=1">上一页</a>
+
+
+
+</center>
+
+{$list|raw}
+</body>
+</html>
